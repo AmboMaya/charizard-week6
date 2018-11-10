@@ -1,12 +1,16 @@
-import React from 'react'
-import Header from './header';
+import React, { Fragment } from 'react'
+import Header from './Layouts/Header'
+import Footer from './Layouts/Footer'
+import Prices from './Layouts/Prices'
 
 class App extends React.Component {
   render () {
     return (
-      <div className = 'page'>
+      <Fragment>
         <Header />
-      </div>
+        <Prices />
+        <Footer />
+      </Fragment>
     )
   }
 }
