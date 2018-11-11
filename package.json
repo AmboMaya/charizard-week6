@@ -24,10 +24,15 @@
       "env",
       "react",
       "stage-3"
+    ],
+    "plugins": [
+      "transform-class-properties"
     ]
   },
   "dependencies": {
     "@material-ui/core": "^3.4.0",
+    "@types/googlemaps": "^3.30.16",
+    "@types/markerclustererplus": "^2.1.33",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -51,6 +56,7 @@
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "nodemon": "^1.18.3",
     "webpack-cli": "^3.1.0"
   }
