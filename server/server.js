@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 const server = express()
-const apiRoute = require('../routes/api')
+const apiRoute = require('../client/Components/api')
 
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
@@ -15,3 +15,6 @@ server.get('*', function (req, res) {
 server.use('/api', apiRoute)
 
 module.exports = server
+
+
+//note to self: no modification required for this page

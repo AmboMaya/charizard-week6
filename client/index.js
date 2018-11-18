@@ -12,3 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('app')
   )
 })
+
+
+//note to self: no modification required for this page
