@@ -1,11 +1,11 @@
 /* global google */
-import _ from "lodash"
-import warning from "warning"
-import invariant from "invariant"
-import { getDisplayName } from "recompose"
-import PropTypes from "prop-types"
-import React from "react"
-import { MAP } from "./constants"
+import _ from 'lodash'
+import warning from 'warning'
+import invariant from 'invariant'
+import { getDisplayName } from 'recompose'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { MAP } from './constants'
 
 export function withGoogleMap(BaseComponent) {
   const factory = React.createFactory(BaseComponent)
