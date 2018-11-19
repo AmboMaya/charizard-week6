@@ -3,9 +3,11 @@ const config = require('../knexfile').development
 const db = knex(config)
 
 function DisplayPrice() {
-  return db('providers').then(res => {
-    console.log(res)
-  })
+  console.log('database')
+  return db('providers')
+  // .then(res => {
+  //   console.log(res)
+  // })
 }
 
 

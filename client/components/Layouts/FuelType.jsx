@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 
+import * as api from '../api/index'
+
 const styles = ({
   buttonGreen: {
     margin: 30,
@@ -42,17 +44,37 @@ const styles = ({
   }
 })
 
-function Prices(props) {
-  const { classes } = props
-  
+class Prices extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      prices: ''
+    }
+  }
+
+  componentDidMount () {
+    this.getPrices()
+  }
+
+  getPrices () {
+    api.DisplayPrices()
+      .then(prices => {
+        console.log(prices)
+        this.setState({prices})
+      })
+  }
+
+  render() {  
+    const { classes } = this.props
   return (
     <div className={classes.row} spacing={16}>
-    <Button variant="fab" color="secondary" className={classes.buttonGreen}>91 </Button>
-    <Button variant="fab" color="secondary" className={classes.buttonYellow}>95 </Button>
-    <Button variant="fab" color="secondary" className={classes.buttonBlue}>98 </Button>
-    <Button variant="fab" color="secondary" className={classes.buttonBlack}>Diesel </Button>
+      <Button variant="fab" color="secondary" className={classes.buttonGreen}>91 </Button>
+      <Button variant="fab" color="secondary" className={classes.buttonYellow}>95 </Button>
+      <Button variant="fab" color="secondary" className={classes.buttonBlue}>98 </Button>
+      <Button variant="fab" color="secondary" className={classes.buttonBlack}>Diesel </Button>
     </div>
-  )
+    )
+  }
 }
 
 Prices.propTypes = {

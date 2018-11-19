@@ -3,7 +3,14 @@ const router = express.Router()
 const db = require('../database/db')
 
 router.get('/', (req, res) => {
-  db.DisplayPrices().then()
+  console.log('test')
+  db.DisplayPrice()
+  .then(price => {
+    console.log(price)
+    res.json(price)
+  })
 })
+
+router.use(express.json())
 
 module.exports = router
