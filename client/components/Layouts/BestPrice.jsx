@@ -29,16 +29,16 @@ const Prices = (props) => {
     return (
       <div className={classes.row}>
           <Typography variant="h5" gutterBottom className={classes.paragraph}>
-            $2.45
+            {props.price91}
           </Typography>
           <Typography variant="h5" gutterBottom className={classes.paragraph}>
-            $2.30
+            {props.price95}
           </Typography>
           <Typography variant="h5" gutterBottom className={classes.paragraph}>
-            $2.34
+            {props.price98}
           </Typography>
           <Typography variant="h5" gutterBottom className={classes.paragraph}>
-            $2.34
+            {props.priceDiesel}
           </Typography>
       </div>
     )

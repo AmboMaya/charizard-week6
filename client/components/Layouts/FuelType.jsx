@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
+
 
 import * as api from '../api/index'
 
@@ -41,38 +43,22 @@ const styles = ({
   row: {
     display: 'flex',
     justifyContent: 'center',
+    textShadow: '2px 2px #ff0000'
+
   }
 })
 
-class Prices extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      prices: ''
-    }
-  }
+class Prices extends React.Component {
 
-  componentDidMount () {
-    this.getPrices()
-  }
-
-  getPrices () {
-    api.DisplayPrices()
-      .then(prices => {
-        console.log(prices)
-        this.setState({prices})
-      })
-  }
-
-  render() {  
+  render() {
     const { classes } = this.props
-  return (
-    <div className={classes.row} spacing={16}>
-      <Button variant="fab" color="secondary" className={classes.buttonGreen}>91 </Button>
-      <Button variant="fab" color="secondary" className={classes.buttonYellow}>95 </Button>
-      <Button variant="fab" color="secondary" className={classes.buttonBlue}>98 </Button>
-      <Button variant="fab" color="secondary" className={classes.buttonBlack}>Diesel </Button>
-    </div>
+    return (
+      <div className={classes.row} spacing={16}>
+        <Button variant="fab" color="secondary" className={classes.buttonGreen} onClick={()=>{this.props.fuelTypeSelector('91')}}> 91 </Button>
+        <Button variant="fab" color="secondary" className={classes.buttonYellow} onClick={()=>{this.props.fuelTypeSelector('95')}}> 95 </Button>
+        <Button variant="fab" color="secondary" className={classes.buttonBlue} onClick={()=>{this.props.fuelTypeSelector('98')}}> 98 </Button>
+        <Button variant="fab" color="secondary" className={classes.buttonBlack} onClick={()=>{this.props.fuelTypeSelector('diesel')}}> Diesel </Button>
+      </div>
     )
   }
 }
@@ -82,3 +68,4 @@ Prices.propTypes = {
 }
 
 export default withStyles(styles)(Prices);
+
