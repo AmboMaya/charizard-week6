@@ -1,13 +1,22 @@
-import React, { Component } from 'react'
-
-export class Map extends Component {
-  render() {
-    return (
+import React, { Component } from 'react';
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
+class Map extends Component {
+   render() {
+   const GoogleMapExample = withGoogleMap(props => (
+      <GoogleMap
+        defaultCenter = { { lat: -36.8485, lng: 174.7633 } }
+        defaultZoom = { 13 }
+      >
+      </GoogleMap>
+   ));
+   return(
       <div>
-        This is map component
+        <GoogleMapExample
+          containerElement={ <div style={{ height: `500px`, width: '70%' }} /> }
+          mapElement={ <div style={{ height: `100%` }} /> }
+        />
       </div>
-    )
-  }
-}
-
-export default Map
+   );
+   }
+};
+export default Map;
