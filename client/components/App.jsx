@@ -1,5 +1,6 @@
 import React from 'react'
 import Main from './Main'
+import Map from './Map'
 
 const App = () => {
   return (
