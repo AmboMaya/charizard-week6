@@ -13,7 +13,7 @@ export class Main extends Component {
       answer : 'Happy KTV',
       show: false
     },
-    question1: {
+    question2: {
       hints: ['', 'EDAs hidden talents','Alcohol required', 'Better with Allies rap'],
       position: {
         lat: -36.880496,
@@ -26,14 +26,12 @@ export class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        This main Page
-        <Hints />
         <div className="row">
           <div className='col s12 m7'>
             <Map question={this.state.question1}/>
           </div>
           <div className='col s12 m5'>
-            {/* <Map /> change this to hints */}
+            <Hints />
           </div>
         </div>
       </React.Fragment>
