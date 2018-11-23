@@ -7,7 +7,7 @@ export class Main extends Component {
   super(props)
   this.state = {
     question1: {
-      hints: ['Entertainment', 'EDAs hidden talents','Alcohol required', 'Better with Allies rap'],
+      hints: ['Entertainment', "EDA's hidden talents place",'Alcohol required', "Better with Allie's rap"],
       position: {
         lat: -36.8537569,
         lng: 174.7583916
@@ -49,7 +49,7 @@ export class Main extends Component {
   }
     clickHandler () {
     this.setState({hint:this.state.question1.hints[0]})
-    let timer = setInterval(this.showHints, 3000)
+    let timer = setInterval(this.showHints, 8000)
     }
 
     changeHandler (e) {
