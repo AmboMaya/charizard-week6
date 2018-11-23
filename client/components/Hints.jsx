@@ -4,12 +4,14 @@ export class Hints extends Component {
   constructor(props) {
   super(props) 
     this.state = {
-      hints: ['this is hint 1', 'this is hint 2', 'this is hint 3', 'this is hint 4',],
-      hint:'test',
-      counter: 0
+      hints: ['hint1', 'hint2', 'this is hint 3', 'this is hint 4',],
+      hint:'',
+      counter: 1,
+      answer: ""
     }
     this.clickHandler = this.clickHandler.bind(this)
     this.showHints = this.showHints.bind(this)
+    this.changeHandler = this.changeHandler.bind(this)
   }
 
     showHints () {
@@ -20,21 +22,22 @@ export class Hints extends Component {
     }
   }
     clickHandler () {
-    console.log("button")
-    let timer = setInterval(this.showHints, 1000)
+    this.setState({hint:this.state.hints[0]})
+    let timer = setInterval(this.showHints, 3000)
+    }
+
+    changeHandler (e) {
+      this.setState({answer: e.target.value})
     }
   render () {
     return (
       <div>
       <button onClick={this.clickHandler}>
-      clickme
+      Start hints
       </button>
-        this is the hint component
-        <h3>{this.state.hint}</h3>
-        <div className='hint'>{this.state.hints[0]}</div>
-        <div className='hint'>{this.state.hints[1]}</div>
-        <div className='hint'>{this.state.hints[2]}</div>
-        <div className='hint'>{this.state.hints[3]}</div>
+      <div className='hint'><h3>{this.state.hint}</h3></div>
+      <input type="text" onChange={this.changeHandler} placeholder="Enter the answer" value={this.state.answer} />
+      
       </div>
     )
   }
