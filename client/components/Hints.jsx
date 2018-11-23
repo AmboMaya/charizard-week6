@@ -31,12 +31,12 @@ export class Hints extends Component {
     }
   render () {
     return (
-      <div>
-      <button onClick={this.clickHandler}>
+      <div className='hints'>
+      <button className='btn waves-effect waves-light' onClick={this.clickHandler}>
       Start hints
       </button>
       <div className='hint'><h3>{this.state.hint}</h3></div>
-      <input type="text" onChange={this.changeHandler} placeholder="Enter the answer" value={this.state.answer} />
+      <input className='deep-orange-text text-darken-4' type="text" onChange={this.changeHandler} placeholder="Enter the answer" value={this.state.answer} />
       
       </div>
     )

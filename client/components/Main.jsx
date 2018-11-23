@@ -26,13 +26,15 @@ export class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="row">
+      <div className="container ">
+        <div className="row ">
           <div className='col s12 m7'>
             <Map question={this.state.question1}/>
           </div>
           <div className='col s12 m5'>
             <Hints />
           </div>
+        </div>
         </div>
       </React.Fragment>
       
