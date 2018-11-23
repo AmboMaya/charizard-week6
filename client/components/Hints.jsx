@@ -34,11 +34,11 @@ import React from 'react'
     console.log(props)
     return (
       <div>
-      <button onClick={props.clickHandler}>
+      <button className='btn waves-effect waves-light' onClick={props.clickHandler}>
       Start hints
       </button>
       <div className='hint'><h3>{props.hint}</h3></div>
-      <input type="text" onChange={props.changeHandler} placeholder="Enter the answer" value={props.answer} />
+      <input className='deep-orange-text text-darken-4' type="text" onChange={props.changeHandler} placeholder="Enter the answer" value={props.answer} />
       
       </div>
     )

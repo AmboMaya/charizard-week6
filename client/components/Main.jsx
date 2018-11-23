@@ -58,8 +58,8 @@ export class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        This main Page
-        <div className="row">
+      <div className="container ">
+        <div className="row ">
           <div className='col s12 m7'>
             <Map question={this.state.question1}/>
           </div>
@@ -68,6 +68,7 @@ export class Main extends Component {
                     changeHandler={this.changeHandler}
                     hint={this.state.hint}/>
           </div>
+        </div>
         </div>
       </React.Fragment>
       
