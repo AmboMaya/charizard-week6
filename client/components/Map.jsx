@@ -11,43 +11,13 @@ import { withGoogleMap, GoogleMap, Polyline, Marker } from 'react-google-maps'
 // });
 
 const Map = ({question}) => {
-  const GoogleMapExample = withGoogleMap(() => (
+  const GoogleMapContainer = withGoogleMap(() => (
     <GoogleMap
       defaultCenter = { { lat: -36.8485, lng: 174.7633 } }
       defaultZoom = { 12 }
     >
     {question.show && <Marker position={question.position} />}
-    </GoogleMap>
-  ))
-  return (
-    <div>
-      <GoogleMapExample
-        containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
-        mapElement={ <div style={{ height: `100%` }} /> } 
-        />
-    </div>
-  )
-}
-
-//    render(props) {
-//      console.log(props)
-//    const GoogleMapExample = withGoogleMap(props => (
-//       <GoogleMap
-//         defaultCenter = { { lat: -36.8485, lng: 174.7633 } }
-//         defaultZoom = { 13 }
-//         position={props.position}
-//       >
-//       <Marker position={props} />
-//       </GoogleMap>
-//    ));
-//    return(
-//       <div>
-//         <GoogleMapExample
-//           containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
-//           mapElement={ <div style={{ height: `100%` }} /> } 
-//           />
-        
-//           {/* <Polyline
+       {/* <Polyline
 //                 path={range}
 //                 geodesic={true}
 //                 options={{
@@ -63,8 +33,15 @@ const Map = ({question}) => {
 //                     ] 
 //                 }}
 //             /> */}
-//       </div>
-//    );
-//    }
-// };
+    </GoogleMap>
+  ))
+  return (
+    <div>
+      <GoogleMapContainer
+        containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
+        mapElement={ <div style={{ height: `100%` }} /> } 
+        />
+    </div>
+  )
+}
 export default Map

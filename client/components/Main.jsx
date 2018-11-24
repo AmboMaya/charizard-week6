@@ -7,7 +7,7 @@ export class Main extends Component {
   super(props)
   this.state = {
     question1: {
-      hints: ['Entertainment', "EDA's hidden talents place",'Alcohol required', "Better with Allie's rap"],
+      hints: ['Entertainment', "EDA's hidden talents place",'Alcohol required', "Better with Allie's rap", "And the answer is: Happy KTV"],
       position: {
         lat: -36.8537569,
         lng: 174.7583916
